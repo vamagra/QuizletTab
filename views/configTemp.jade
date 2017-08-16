@@ -1,0 +1,92 @@
+doctype html
+
+html(lang="en")
+  head
+    title GitHub Page View 
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet")
+    link(href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css",rel="stylesheet")
+    link(href="/css/msteam-app.css", rel="stylesheet")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+    script(src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js")
+    script(src="https://statics.teams.microsoft.com/sdk/v1.0/js/MicrosoftTeams.js")
+    script(src="/js/config.js")
+    script(src="/js/theme.js")
+    script(src="/js/app.js")
+  body
+    script(type='text/javascript').             
+      var user = !{JSON.stringify(user)};
+    if user
+      div Logged in as #{user[0].user.userid}
+      div.settings-section#settingsSection
+        div.index-page-header
+        div.index-page-title#indexPageTitle
+        div.index-page-subtitle Quizlet by Microsoft Teams
+      div.settings-container#settingContainer  
+        div.table-responsive
+          table#table-pullrequests.table.table-hover
+      | Tab Name  - 
+      input#tabName(type='text', name='fname', value="Quizlet", style="width:250px")
+    else
+      form.form-signin(role="form", action="/signin?source=index", method="post")
+        div.signin-container
+          img.signin-img(src='/custom/assets/colorIcon.png')
+          div.signin-title Log in to get started
+          div.signin-lastsubtitle log in to your account
+          button.ts-btn.ts-btn-primary(type="button", onclick="signInWithQuizlet(event, 'index')") Log in with Quizlet
+
+doctype html
+
+html(lang="en")
+  head
+    title GitHub Page View 
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet")
+    link(href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css",rel="stylesheet")
+    link(href="/css/msteam-app.css", rel="stylesheet")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+    script(src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js")
+    script(src="https://statics.teams.microsoft.com/sdk/v1.0/js/MicrosoftTeams.js")
+    script(src="/js/config.js")
+    script(src="/js/theme.js")
+    script(src="/js/app.js")
+  body
+    script(type='text/javascript').             
+      var user = !{JSON.stringify(user)};
+    if user
+      div Logged in as #{user[0].user.userid}
+      #selectionSection.selection-section
+          .btn-group
+              button#repo-choice-button.btn.btn-default.dropdown-toggle(type='button', style='white-space: inherit ! important', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  | Select Sets
+                  span.pull-right
+                    span.glyphicon.glyphicon-menu-down
+              #repo-choice-dropdown.ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu')
+                li
+                  a(tabindex='-1', href='#') Created By me
+                li
+                  a(tabindex='-1', href='#') Favorites
+                li
+                  a(tabindex='-1', href='#') Recently studied
+      div.settings-section#settingsSection
+        div.index-page-header
+        div.index-page-title#indexPageTitle
+        div.index-page-subtitle Quizlet by Microsoft Teams
+      div.settings-container#settingContainer  
+        div.table-responsive
+          table#table-pullrequests.table.table-hover
+      | Tab Name  - 
+      input#tabName(type='text', name='fname', value="Quizlet", style="width:250px")
+    else
+      form.form-signin(role="form", action="/signin?source=index", method="post")
+        div.signin-container
+          img.signin-img(src='/custom/assets/colorIcon.png')
+          div.signin-title Log in to get started
+          div.signin-lastsubtitle log in to your account
+          button.ts-btn.ts-btn-primary(type="button", onclick="signInWithQuizlet(event, 'index')") Log in with Quizlet

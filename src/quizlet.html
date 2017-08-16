@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Base64/1.0.1/base64.min.js"></script>
+    
+</head>
+<body>
+    <script type="text/javascript">
+        var myClientId = 'SCh2wDU4gZ';
+        var mySecret = 'C3e43VASjwMnesjuNwHyyM';
+        var myUrl = 'https://ec67a532.ngrok.io/tab/quizlet.html';
+        var authorizeUrl = "https://quizlet.com/authorize?response_type=code&client_id=" + myClientId + "&scope=read&state=quizlet&redirect_url=" + myUrl;
+        var tokenUrl = 'https://api.quizlet.com/oauth/token';
+    </script>
+
+    <input id="clickMe" type="button" value="Login" onclick="location.href='https://quizlet.com/authorize?response_type=code&client_id=SCh2wDU4gZ&scope=read&state=quizlet&redirect_url=https://841bf3ce.ngrok.io/tab/callback.html'" />
+</body>
+
+
+</html>

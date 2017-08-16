@@ -1,0 +1,41 @@
+{
+    "manifestVersion": "1.0",
+    "version": "1.0",
+    "id": "f1312a63-01cc-40b0-8460-6194fe7e4955",
+    "packageName": "com.github.microsoftteams",
+    "developer": {
+        "name": "Microsoft Corp.",
+        "websiteUrl": "https://www.quizlet.com",
+        "privacyUrl": "https://www.quizlet.com/privacy",
+        "termsOfUseUrl": "https://www.quizlet.com/termsofuse"
+     },
+    "name": {
+        "short": "Quizlet",
+        "long": "Quizlet"
+    },
+    "description": {
+        "short": "The world’s largest student and teacher online learning community.",
+        "full": "Master your classes with the leading education app! Create your own flashcards or choose from millions created by other Quizlet users on thousands of subjects."
+    },
+    "icons": {
+        "outline": "quizlet_icon.png",
+        "color": "quizlet_icon.png"
+    },
+    "accentColor": "#4656ac",
+    "configurableTabs": [
+        {
+            "configurationUrl": "https://841bf3ce.ngrok.io/signin",
+            "canUpdateConfiguration": false,
+            "scopes": [
+                "team"
+            ]
+        }
+    ],
+    "staticTabs": [],
+    "bots": [],
+    "permissions": [],
+    "validDomains": [
+        "*.quizlet.com",
+        "*.ngrok.io"
+    ]
+}
